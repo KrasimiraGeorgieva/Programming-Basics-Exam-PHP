@@ -1,0 +1,14 @@
+<?php
+
+$vegetablePrice = floatval(readline());
+$fruitPrice = floatval(readline());
+$vegKg = floatval(readline());
+$fruitKg = floatval(readline());
+
+
+$allV = $vegetablePrice * $vegKg;
+$allF= $fruitPrice * $fruitKg;
+
+$all = $allV + $allF;
+$allEuro = $all / 1.94;
+echo $allEuro;
