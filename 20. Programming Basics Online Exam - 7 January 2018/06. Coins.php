@@ -2,6 +2,8 @@
 
 // Шеста задача от изпит " Основи на програмирането" – 7 Януари 2018
 
+// Variant 1
+
 $twoLv = 0;
 $oneLv = 0;
 $fiftySt = 0;
@@ -12,7 +14,7 @@ $twoSt = 0;
 $oneSt = 0;
 
 $num = floatval(readline());
-$current = 100*$num;
+$current = 100 * $num;
 
 $twoLv += floor($current / 200);
 $current -= 200 * $twoLv;
@@ -41,3 +43,48 @@ $current -= $current - 1 * $oneSt;
 
 $coins = $twoLv + $oneLv + $fiftySt + $twentySt + $tenSt + $fiveSt + $twoSt + $oneSt;
 echo $coins;
+
+// Variant 2
+
+$n = floatval(readline());
+$sumInCoins = $n * 100;
+$coinsCounter = 0;
+$flag = true;
+do{
+    if ($sumInCoins >= 200){
+        $sumInCoins -= 200;
+        $coinsCounter++;       
+        continue;
+    }if ($sumInCoins >= 100){
+        $sumInCoins -= 100;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 50){
+        $sumInCoins -= 50;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 20){
+        $sumInCoins -= 20;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 10){
+        $sumInCoins -= 10;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 5){
+        $sumInCoins -= 5;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 2){
+        $sumInCoins -= 2;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins >= 1){
+        $sumInCoins -= 1;
+        $coinsCounter++;
+        continue;
+    }if ($sumInCoins <= 1){
+        $flag = false;
+    }
+}while ($flag);
+echo $coinsCounter;
